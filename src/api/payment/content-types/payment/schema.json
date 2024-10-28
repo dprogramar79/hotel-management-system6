@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "Payment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "paymentMode": {
+      "type": "enumeration",
+      "enum": [
+        "Cash",
+        "Upi",
+        "NEFT",
+        "Check"
+      ],
+      "required": true
+    },
+    "approvedBy": {
+      "type": "string",
+      "required": true
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "paymentDetailscreatedAt": {
+      "type": "datetime"
+    },
+    "paymentVerifiedAt": {
+      "type": "datetime"
+    },
+    "paymentOf": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "required": true
+    },
+    "pgId": {
+      "type": "string",
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "payments"
+    }
+  }
+}

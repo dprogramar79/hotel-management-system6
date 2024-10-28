@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amenities",
+  "info": {
+    "singularName": "amenity",
+    "pluralName": "amenities",
+    "displayName": "Amenity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amenityId": {
+      "type": "uid",
+      "required": true,
+      "targetField": "name"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "createdAmenityAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "updatedAmenityAt": {
+      "type": "datetime"
+    },
+    "pgs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pg.pg",
+      "inversedBy": "amenities"
+    }
+  }
+}

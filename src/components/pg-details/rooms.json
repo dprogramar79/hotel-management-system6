@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_pg_details_rooms",
+  "info": {
+    "displayName": "rooms",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "string",
+      "required": true
+    },
+    "rent": {
+      "type": "decimal"
+    },
+    "avaiblity": {
+      "type": "enumeration",
+      "enum": [
+        "Available",
+        "Unavailable"
+      ],
+      "default": "Available",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "capacity": {
+      "type": "string"
+    }
+  }
+}

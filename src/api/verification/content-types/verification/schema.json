@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "verifications",
+  "info": {
+    "singularName": "verification",
+    "pluralName": "verifications",
+    "displayName": "Verification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "documentUrl": {
+      "type": "string"
+    },
+    "documentType": {
+      "type": "enumeration",
+      "enum": [
+        "Aadhar",
+        "Passport",
+        "Driving License",
+        "Pan Card",
+        "Other"
+      ],
+      "required": true
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "verifiedBy": {
+      "type": "string",
+      "required": true
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "verifiedAt": {
+      "type": "datetime"
+    },
+    "verificationFor": {
+      "type": "enumeration",
+      "enum": [
+        "User",
+        "PG Owner",
+        "Management"
+      ]
+    },
+    "documentImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

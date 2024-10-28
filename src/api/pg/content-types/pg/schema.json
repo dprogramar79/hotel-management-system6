@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pgs",
+  "info": {
+    "singularName": "pg",
+    "pluralName": "pgs",
+    "displayName": "PG",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pgId": {
+      "type": "uid",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "googleMapLink": {
+      "type": "string"
+    },
+    "ownerName": {
+      "type": "string",
+      "required": true
+    },
+    "contactPersonName": {
+      "type": "string",
+      "required": true
+    },
+    "room": {
+      "displayName": "rooms",
+      "type": "component",
+      "repeatable": false,
+      "component": "pg-details.rooms"
+    },
+    "documentation": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Inactive"
+      ]
+    },
+    "pgCreatedAt": {
+      "type": "datetime"
+    },
+    "pgUpdatedAt": {
+      "type": "datetime"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::amenity.amenity",
+      "mappedBy": "pgs"
+    }
+  }
+}

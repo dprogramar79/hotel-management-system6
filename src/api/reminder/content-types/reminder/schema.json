@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reminders",
+  "info": {
+    "singularName": "reminder",
+    "pluralName": "reminders",
+    "displayName": "Reminder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reminderId": {
+      "type": "uid"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Rent",
+        "Electricity"
+      ]
+    },
+    "remindAt": {
+      "type": "datetime"
+    },
+    "pgId": {
+      "type": "string",
+      "required": true
+    },
+    "remindTo": {
+      "type": "string"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "reminder"
+    }
+  }
+}

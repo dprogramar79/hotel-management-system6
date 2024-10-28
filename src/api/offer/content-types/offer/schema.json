@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "offerId": {
+      "type": "uid",
+      "required": true
+    },
+    "validFrom": {
+      "type": "datetime",
+      "required": true
+    },
+    "validUpto": {
+      "type": "datetime",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
+    "pgId": {
+      "type": "string"
+    },
+    "termCondition": {
+      "type": "blocks"
+    },
+    "offerFrom": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_message_notifications",
+  "info": {
+    "displayName": "notification",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "string",
+      "required": true
+    },
+    "pgId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Regular",
+        "Events",
+        "Special"
+      ]
+    },
+    "notificationFrom": {
+      "type": "string",
+      "default": "pgOwner",
+      "required": true
+    },
+    "notificationTo": {
+      "type": "string",
+      "required": true,
+      "default": "All"
+    },
+    "notificationCreatedAt": {
+      "type": "datetime"
+    },
+    "pg": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pg.pg"
+    }
+  }
+}

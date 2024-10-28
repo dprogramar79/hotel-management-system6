@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chatbots",
+  "info": {
+    "singularName": "chatbot",
+    "pluralName": "chatbots",
+    "displayName": "Chatbot"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chatType": {
+      "type": "uid"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "chatbot"
+    },
+    "users_permissions_user2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "createdChatAt": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}
